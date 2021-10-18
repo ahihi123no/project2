@@ -107,19 +107,53 @@
                 </div>
                 <ul class="nav nav-tabs text-center mt-3">
                     <li class="nav-item">
-                      <a class="nav-link active" data-toggle="tab" href="#home">Số ca nhiễm</a>
+                      <a class="nav-link active" data-toggle="tab" href="#home">Thống kê</a>
                     </li>
                     <li class="nav-item">
-                      <a class="nav-link" data-toggle="tab" href="#menu1">Số ca đã tiêm</a>
+                      <a class="nav-link" data-toggle="tab" href="#menu1">Biểu đồ</a>
                     </li>                   
                 </ul>             
                   <!-- Tab panes -->
                 <div class="tab-content">
                     <div id="home" class="container tab-pane active"><br>
-                        <canvas id="myChart"></canvas>
+                        <table class="table table-bordered text-center">
+                            <thead>
+                              <tr>
+                                <th>Ngày</th>
+                                <th>Số ca tử vong</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td>03-10</td>
+                                <td>114</td>
+                               
+                              </tr>
+                              <tr>
+                                <td>04-10</td>
+                                <td>130</td>
+                          
+                              </tr>
+                              <tr>
+                                <td>05-10</td>
+                                <td>134</td>
+                               
+                              </tr>
+                              <tr>
+                                <td>06-10</td>
+                                <td>119</td>
+                                
+                              </tr>
+                              <tr>
+                                <td>07-10</td>
+                                <td>125</td>
+                                
+                              </tr>
+                            </tbody>
+                        </table>
                     </div>
                     <div id="menu1" class="container tab-pane fade"><br>
-                        <canvas id="vaccineChart"></canvas>
+                        <canvas id="myChart"></canvas>
                     </div>                   
                 </div>
                 <div class="row">
@@ -233,6 +267,36 @@
     <script src="./js/fontawsome.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/chart.js"></script>
+
+    <script>
+
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['03-10', '04-10', '05-10', '06-10', '07-10'],
+                datasets: [{
+                    label: 'Số ca tử vong',
+                    data: [114, 130, 134, 119, 125],
+                    backgroundColor: ['gray', 'gray', 'gray', 'gray', 'gray'],
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'BIỂU ĐỒ',
+                    fontSize: 30,
+                    fontColor: 'grey'
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+    </script>
 
 </body>
 </html>

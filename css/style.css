@@ -42,10 +42,11 @@ html, body{
     left: -200px;
     color: white;
     margin-left: 50px;
-    font-size: 24px;
+    font-size: 30px;
     font-weight: bold;
     text-transform: capitalize;
     line-height: 22px;
+    text-transform: uppercase;
 }
 .header-bottom ul{
     list-style-type: none;
@@ -124,9 +125,9 @@ html, body{
 .table{
     font-size: 14px;
 }
-.table tbody tr td:nth-child(3){
+/* .table tbody tr td:nth-child(3){
     color: #DA2E59;
-}
+} */
 .blog ul{
     list-style-type: none;
 } 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bộ y tế - Cổng thông tin của Bộ y tế về đại dịch covid-19</title>
+    <title>Tin tức Covid-19</title>
     <link rel="stylesheet" href="./bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="shortcut icon" href="./imgs/logo.png" type="image/x-icon">
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-
+    
     <!-- HEADER BEGIN -->
     <header>
         <div class="container-fluid">
@@ -67,6 +67,7 @@
     <div class="container">
         <div class="row mt-3">
             <div class="col-md-12">
+
                 <ul class="nav nav-tabs">
                     <li class="nav-item">
                       <a class="nav-link active" data-toggle="tab" href="#home">Việt Nam</a>
@@ -81,16 +82,16 @@
                         <div class="row">
                             <div class="col-md-4 item-1">
                                 <p class="text m-0">SỐ CA NHIỄM</p>
-                                <p class="value m-0">635.055</p>
-                                <p class="note m-0">Hôm nay <span>+10.508</span></p>
+                                <p class="value m-0">836.134</p>
+                                <p class="note m-0">Hôm nay <span>+4.513</span></p>
                             </div>
                             <div class="col-md-4 item-2">
                                 <p class="text m-0">KHỎI</p>
-                                <p class="value m-0">635.055</p>
+                                <p class="value m-0">760.801</p>
                             </div>
                             <div class="col-md-4 item-3">
                                 <p class="text m-0">TỬ VONG</p>
-                                <p class="value m-0">635.055</p>
+                                <p class="value m-0">20.442</p>
                             </div>
                         </div>                      
                     </div>
@@ -117,45 +118,45 @@
         <div class="row mt-5">
             <div class="col-md-6">
                 <h3 class="title p-0"><a href="#">Tình hình dịch cả nước</a></h3>
-                <table class="table table-hover">
+                <table class="table table-bordered text-center">
                     <thead>
-                      <tr>
+                      <tr style="color: red;">
                         <th>Tỉnh/TP</th>
-                        <th>Tổng số ca</th>
-                        <th>Hôm nay</th>
-                        <th>Tử vong</th>
+                        <th>Số ca nhiễm</th>
+                        <th>Số ca khỏi</th>
+                        
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
                         <td>TP. Hồ Chí Minh</td>
-                        <td>310.307</td>
-                        <td>+6.312</td>
-                        <td>12.419</td>
+                        <td>406.164</td>
+                        <td>300.312</td>
+                        
                       </tr>
                       <tr>
                         <td>Bình Dương</td>
-                        <td>162.875</td>
-                        <td>+2.178</td>
-                        <td>1.452</td>
+                        <td>221.199</td>
+                        <td>150.178</td>
+                        
                       </tr>
                       <tr>
                         <td>Đồng Nai</td>
-                        <td>36.395</td>
-                        <td>+777</td>
-                        <td>12.419</td>
+                        <td>54.361</td>
+                        <td>30.534</td>
+                        
                       </tr>
                       <tr>
-                        <td>Đồng Nai</td>
+                        <td>Long An</td>
                         <td>36.395</td>
-                        <td>+777</td>
-                        <td>12.419</td>
+                        <td>20.168</td>
+                        
                       </tr>
                       <tr>
-                        <td>Đồng Nai</td>
-                        <td>36.395</td>
-                        <td>+777</td>
-                        <td>12.419</td>
+                        <td>Tiền Giang</td>
+                        <td>14.152</td>
+                        <td>10.234</td>
+                        
                       </tr>
                     </tbody>
                 </table>
@@ -438,6 +439,62 @@
     <script src="./js/fontawsome.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="./js/chart.js"></script>
+
+    <script>
+
+        var ctx = document.getElementById('myChart');
+        var myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['TP.Hồ Chí Minh', 'Bình Dương', 'Đồng Nai', 'Long An', 'Tiền Giang'],
+                datasets: [{
+                    label: 'Số ca nhiễm',
+                    data: [406164, 221199, 54361, 36395, 14152],
+                    backgroundColor: [
+                        'orange',
+                        'orange',
+                        'orange',
+                        'orange',
+                        'orange',
+                        'orange'],
+                },{
+                    label: 'Số ca khỏi',
+                    data: [300312, 150178, 30534, 20168, 10234],
+                    backgroundColor: [
+                        'blue',
+                        'blue',
+                        'blue',
+                        'blue',
+                        'blue',
+                        'blue'],
+                // },{
+                //     label: 'Số ca tử vong',
+                //     data: [15677, 2169, 485, 437, 367],
+                //     backgroundColor: [
+                //         'grey',
+                //         'grey',
+                //         'grey',
+                //         'grey',
+                //         'grey',
+                //         'grey'],
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'BIỂU ĐỒ',
+                    fontSize: 30,
+                    fontColor: 'grey'
+                },
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+    </script>
 
 </body>
 
